@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[176]:
 
 
 from sklearn.neighbors import KNeighborsClassifier
@@ -14,13 +10,12 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 
 
-# In[4]:
 
 
 data = pd.read_csv('winequalityN.csv')
 
 
-# In[24]:
+
 
 
 data.head()
@@ -48,7 +43,7 @@ g = data['sulphates'].median()
 data['sulphates'].fillna(g,inplace=True)
 
 
-# In[124]:
+
 
 
 list1 = ['fixed acidity','volatile acidity','citric acid','residual sugar','chlorides','free sulfur dioxide','total sulfur dioxide','density','pH','sulphates','alcohol']
@@ -56,13 +51,13 @@ x =data[list1]
 y = data['quality']
 
 
-# In[158]:
+
 
 
 xtrain,xtest,ytrain,ytest = train_test_split(x,y,test_size=.25)
 
 
-# In[180]:
+
 
 
 model = KNeighborsClassifier()
@@ -73,7 +68,7 @@ df
 model.score(xtest,ytest)
 
 
-# In[150]:
+
 
 
 mod = GaussianNB()
@@ -82,7 +77,7 @@ mod.predict(xtest)
 mod.score(xtest,ytest)
 
 
-# In[151]:
+
 
 
 mod1 = SVC()
@@ -91,7 +86,6 @@ mod1.predict(xtest)
 mod1.score(xtest,ytest)
 
 
-# In[178]:
 
 
 mod2 = DecisionTreeClassifier(max_depth=2)
@@ -100,7 +94,7 @@ mod2.predict(xtest)
 mod2.score(xtest,ytest)
 
 
-# In[169]:
+
 
 
 mod3 = RandomForestClassifier(n_estimators=700)
@@ -109,13 +103,11 @@ mod3.predict(xtest)
 mod3.score(xtest,ytest)
 
 
-# In[179]:
 
 
 plot_tree(mod2.fit(xtrain,ytrain))
 
 
-# In[ ]:
 
 
 
