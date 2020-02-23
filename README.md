@@ -13,4 +13,6 @@ Support Vector Machine
  Decision Trees
  
  Prediction is done based on the quality not on the type of wine so you can change the code according to your need
+ 
+ I will add more supervised classification algorith in the future
 
